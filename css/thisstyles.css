@@ -1,0 +1,63 @@
+
+section#services{
+    background: #e0e4e7;
+    /*background-color:rgb(200, 228, 181);*/
+}
+
+section#contact {
+  background-color:rgb(200, 228, 181);
+  /* background-image: url("../assets/img/map-image.png"); */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.testimonial-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;   /* Hide overflow */
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.testimonial {
+  flex: 0 0 300px;   /* Fixed card width */
+  margin: 0 10px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.slider-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.slider-btn:hover {
+  opacity: 1;
+}
+
+.slider-btn.left { left: 10px; }
+.slider-btn.right { right: 10px; }
+
+
