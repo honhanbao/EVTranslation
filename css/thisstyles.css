@@ -38,6 +38,11 @@ section#contact {
   text-align: center;
 }
 
+.testimonial.scale {
+    transform: scale(0.3);
+    transform-origin: top left; /* keeps scaling from the top-left */
+}
+
 .slider-btn {
   background: #333;
   color: #fff;
