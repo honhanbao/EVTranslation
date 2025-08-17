@@ -1,7 +1,3 @@
-//
-// Scripts
-// 
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -15,7 +11,6 @@ window.addEventListener('DOMContentLoaded', event => {
         } else {
             navbarCollapsible.classList.add('navbar-shrink')
         }
-
     };
 
     // Shrink the navbar 
@@ -24,7 +19,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Shrink the navbar when page is scrolled
     document.addEventListener('scroll', navbarShrink);
 
-    //  Activate Bootstrap scrollspy on the main nav element
+    // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
@@ -46,4 +41,32 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // ===========================
+    // Language switcher functionality
+    // ===========================
+    function setLanguage(lang) {
+        const elements = document.querySelectorAll('[data-en]');
+        elements.forEach(el => {
+            el.textContent = el.getAttribute(`data-${lang}`);
+        });
+
+        // Highlight active language button
+        document.querySelectorAll('.ms-auto button').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.querySelector(`.ms-auto button[onclick="setLanguage('${lang}')"]`);
+        if(activeBtn) activeBtn.classList.add('active');
+    }
+
+    // Attach buttons if needed (in case you want programmatic binding)
+    const langButtons = document.querySelectorAll('.ms-auto button');
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('onclick').match(/'(\w+)'/)[1];
+            setLanguage(lang);
+        });
+    });
+
+    // ===========================
+    // Set default language on page load
+    // ===========================
+    setLanguage('en'); // default to English
 });

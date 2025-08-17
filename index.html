@@ -36,6 +36,17 @@
                          <li class="nav-item"><a class="nav-link" href="#testimonials">Feebback</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
+
+                <!-- Language switcher buttons -->
+                    <!--
+                        ms-auto pushes it to the far right.
+                        me-1 adds spacing between the buttons.
+                        btn-outline-light matches a dark navbar theme.
+                    -->
+                <div class="ms-auto d-flex align-items-center">
+                    <button class="btn btn-outline-light btn-sm me-1" onclick="setLanguage('en')">EN</button>
+                    <button class="btn btn-outline-light btn-sm" onclick="setLanguage('vi')">VI</button>
+                </div>
                 </div>
             </div>
         </nav>
@@ -59,23 +70,21 @@
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">About Me</h2>
-                    <!-- <h3 class="section-subheading text-muted"> </h3> -->
+                    <h2 class="section-heading text-uppercase" 
+                        data-en="About Me" 
+                        data-vi="Về tôi">
+                        About Me
+                    </h2>
                 </div>
                 <div class="container-about">
                     <div class="container-about-text">
-                        <p>
-
-                            My name is Trang Nguyen, and I bring a rich background in literature and 
-                            linguistics to my work as a professional translator and interpreter. 
-                            Originally from Vietnam, where I worked as a literature lecturer, 
-                            I have since completed a Master’s degree in Applied Linguistics and a 
-                            PhD in Education from La Trobe University in Australia.
-                            <br><br>
-                            I started as a NAATI Certified Interpreter in 2017, and I now dedicate myself full-time 
-                            to providing high-quality translation and interpreting services. 
-                            Based in Melbourne, I am deeply passionate about language and communication. 
-                            When I’m not working, I enjoy reading and spending time with my family.
+                        <p 
+                            data-en="My name is Trang Nguyen, and I bring a rich background in literature and linguistics to my work as a professional translator and interpreter.<br><br>Originally from Vietnam, where I worked as a literature lecturer, I have since completed a Master’s degree in Applied Linguistics and a PhD in Education from La Trobe University in Australia.<br><br>I started as a NAATI Certified Interpreter in 2017, and I now dedicate myself full-time to providing high-quality translation and interpreting services. Based in Melbourne, I am deeply passionate about language and communication. When I’m not working, I enjoy reading and spending time with my family."
+                            data-vi="Tên tôi là Trang Nguyen, tôi có nền tảng vững chắc về văn học và ngôn ngữ học phục vụ công việc dịch thuật và phiên dịch chuyên nghiệp.<br><br>Tôi đến từ Việt Nam, nơi tôi từng giảng dạy văn học, và đã hoàn thành Thạc sĩ Ngôn ngữ học Ứng dụng và Tiến sĩ Giáo dục tại Đại học La Trobe, Úc.<br><br>Tôi trở thành Phiên dịch viên NAATI Certified từ năm 2017, và hiện nay tôi dành toàn thời gian cung cấp dịch vụ dịch thuật và phiên dịch chất lượng cao. Tôi sống tại Melbourne và rất đam mê ngôn ngữ và giao tiếp. Khi không làm việc, tôi thích đọc sách và dành thời gian cho gia đình."
+                        >
+                            My name is Trang Nguyen, and I bring a rich background in literature and linguistics to my work as a professional translator and interpreter.<br><br>
+                            Originally from Vietnam, where I worked as a literature lecturer, I have since completed a Master’s degree in Applied Linguistics and a PhD in Education from La Trobe University in Australia.<br><br>
+                            I started as a NAATI Certified Interpreter in 2017, and I now dedicate myself full-time to providing high-quality translation and interpreting services. Based in Melbourne, I am deeply passionate about language and communication. When I’m not working, I enjoy reading and spending time with my family.
                         </p>
                     </div>
                     <div class="container-about-photo">

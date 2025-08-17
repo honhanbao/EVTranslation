@@ -1,3 +1,13 @@
+/* Highlight the active language button in navbar */
+.ms-auto button.active {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+    border-color: #ffffff; /* optional: highlight border */
+    color: #fff; /* ensure text is visible on dark navbar */
+}
+
+
+
 
 section#services{
     background: #e0e4e7;
