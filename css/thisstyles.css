@@ -521,22 +521,6 @@ section#featured {
     transform: translate(2px, -2px);
 }
 
-#featured .featured-card:first-child .featured-card-link img {
-    width: 100%;
-    height: auto;
-    max-height: 165px;
-    object-fit: contain;
-    object-position: center;
-    margin-top: 0;
-}
-
-#featured .featured-card-link strong {
-    display: block;
-    padding: 0.55rem 0.8rem 0;
-    font-size: 0.92rem;
-    line-height: 1.25;
-}
-
 #featured .featured-card-footer {
     display: flex;
     align-items: center;
@@ -564,17 +548,18 @@ section#featured {
     background: #f3f4f6;
 }
 
-#featured .linkedin-mark {
-    display: grid;
-    place-items: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 2px;
-    background: #fff;
-    color: #0794c8;
-    font-size: 1.65rem;
-    font-weight: 800;
-    line-height: 1;
+#featured .featured-card-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #f3f4f6;
+}
+
+#featured .featured-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 @media (max-width: 767px) {

@@ -104,6 +104,27 @@ window.addEventListener('DOMContentLoaded', event => {
     // =====================
     // Featured Carousel
     // =====================
+    document.querySelectorAll('.youtube-preview').forEach((preview) => {
+        const overlay = preview.querySelector('.youtube-preview-overlay');
+        const iframe = preview.querySelector('iframe');
+        if (!iframe) return;
+
+        const loadVideo = () => {
+            const videoSrc = preview.dataset.videoSrc || iframe.getAttribute('src');
+            if (videoSrc && videoSrc !== 'about:blank') {
+                const autoplaySrc = videoSrc.includes('autoplay=1') ? videoSrc : videoSrc + (videoSrc.includes('?') ? '&autoplay=1' : '?autoplay=1');
+                iframe.setAttribute('src', autoplaySrc);
+            }
+            preview.classList.add('is-playing');
+        };
+
+        if (overlay) {
+            overlay.addEventListener('click', loadVideo);
+        }
+
+        iframe.addEventListener('click', loadVideo);
+    });
+
     const featuredTrack = document.querySelector('.featured-track');
     if (featuredTrack) {
         const featuredCards = Array.from(featuredTrack.querySelectorAll('.featured-card'));
