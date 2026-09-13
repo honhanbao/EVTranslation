@@ -55,38 +55,74 @@ window.addEventListener('DOMContentLoaded', event => {
     // ======================
     const track = document.querySelector('.carousel-track');
     if (track) {
-        const testimonials = document.querySelectorAll('.testimonial');
+        const testimonials = Array.from(document.querySelectorAll('.testimonial-card'));
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-        let index = 0;
+        const visibleCount = 3;
+        let startIndex = 0;
 
         function updateCarousel() {
-            track.style.transform = `translateX(-${index * 320}px)`; 
-            // 300px width + 20px margin = 320px
-            track.style.transition = "transform 0.5s ease-in-out";
+            testimonials.forEach((card, index) => {
+                const isVisible = index >= startIndex && index < startIndex + visibleCount;
+                card.classList.toggle('hidden', !isVisible);
+            });
         }
 
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
-                if (index < testimonials.length - 1) {
-                    index++;
-                } else {
-                    index = 0; // loop back to first
-                }
+                startIndex = (startIndex + 1) % Math.max(testimonials.length - visibleCount + 1, 1);
                 updateCarousel();
             });
         }
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
-                if (index > 0) {
-                    index--;
-                } else {
-                    index = testimonials.length - 1; // loop back to last
-                }
+                const maxStart = Math.max(testimonials.length - visibleCount, 0);
+                startIndex = startIndex <= 0 ? maxStart : startIndex - 1;
                 updateCarousel();
             });
         }
+
+        updateCarousel();
+    }
+
+    // =====================
+    // Featured Carousel
+    // =====================
+    const featuredTrack = document.querySelector('.featured-track');
+    if (featuredTrack) {
+        const featuredCards = Array.from(featuredTrack.querySelectorAll('.featured-card'));
+        const featuredPrevBtn = document.getElementById('featuredPrevBtn');
+        const featuredNextBtn = document.getElementById('featuredNextBtn');
+        let featuredStartIndex = 0;
+
+        const getFeaturedVisibleCount = () => window.innerWidth <= 767 ? 1 : 3;
+
+        function updateFeaturedCarousel() {
+            const visibleCount = getFeaturedVisibleCount();
+            const maxStart = Math.max(featuredCards.length - visibleCount, 0);
+            featuredStartIndex = Math.min(featuredStartIndex, maxStart);
+
+            featuredCards.forEach((card, index) => {
+                const isVisible = index >= featuredStartIndex && index < featuredStartIndex + visibleCount;
+                card.classList.toggle('hidden', !isVisible);
+            });
+        }
+
+        featuredNextBtn?.addEventListener('click', () => {
+            const maxStart = Math.max(featuredCards.length - getFeaturedVisibleCount(), 0);
+            featuredStartIndex = featuredStartIndex >= maxStart ? 0 : featuredStartIndex + 1;
+            updateFeaturedCarousel();
+        });
+
+        featuredPrevBtn?.addEventListener('click', () => {
+            const maxStart = Math.max(featuredCards.length - getFeaturedVisibleCount(), 0);
+            featuredStartIndex = featuredStartIndex <= 0 ? maxStart : featuredStartIndex - 1;
+            updateFeaturedCarousel();
+        });
+
+        window.addEventListener('resize', updateFeaturedCarousel);
+        updateFeaturedCarousel();
     }
 
 });
