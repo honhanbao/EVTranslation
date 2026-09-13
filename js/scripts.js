@@ -58,6 +58,7 @@ window.addEventListener('DOMContentLoaded', event => {
         const testimonials = Array.from(document.querySelectorAll('.testimonial-card'));
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
+        const testimonialDots = Array.from(document.querySelectorAll('.testimonial-dots .dot'));
         const visibleCount = 3;
         let startIndex = 0;
 
@@ -65,6 +66,12 @@ window.addEventListener('DOMContentLoaded', event => {
             testimonials.forEach((card, index) => {
                 const isVisible = index >= startIndex && index < startIndex + visibleCount;
                 card.classList.toggle('hidden', !isVisible);
+            });
+
+            testimonialDots.forEach((dot, index) => {
+                const isActive = index === startIndex;
+                dot.classList.toggle('active', isActive);
+                dot.setAttribute('aria-current', isActive ? 'true' : 'false');
             });
         }
 
@@ -82,6 +89,13 @@ window.addEventListener('DOMContentLoaded', event => {
                 updateCarousel();
             });
         }
+
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                startIndex = Math.min(index, Math.max(testimonials.length - visibleCount, 0));
+                updateCarousel();
+            });
+        });
 
         updateCarousel();
     }
