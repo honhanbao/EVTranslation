@@ -86,6 +86,21 @@ window.addEventListener('DOMContentLoaded', event => {
         updateCarousel();
     }
 
+    const videoWrap = document.querySelector('.featured-video');
+    if (videoWrap) {
+        const overlay = videoWrap.querySelector('.featured-video-overlay');
+        const iframe = videoWrap.querySelector('iframe');
+        if (overlay && iframe) {
+            overlay.addEventListener('click', () => {
+                const src = iframe.getAttribute('src');
+                if (src && !src.includes('autoplay=1')) {
+                    iframe.setAttribute('src', src + '&autoplay=1');
+                }
+                videoWrap.classList.add('is-playing');
+            });
+        }
+    }
+
     // =====================
     // Featured Carousel
     // =====================
