@@ -393,8 +393,12 @@ section#services {
 }
 
 section#featured {
-    background: #8fc2c2;
-    color: #131E3D;
+    background: #131E3D;
+    color: #d9c09a;
+}
+
+#featured .section-heading {
+    color: #d9c09a;
 }
 
 .featured-slider {
@@ -425,6 +429,7 @@ section#featured {
     display: flex;
     flex-direction: column;
     color: #252525;
+    background: #d9c09a;
 }
 
 #featured .featured-card-type,
@@ -494,17 +499,17 @@ section#featured {
     gap: 0.7rem;
     margin: 0.45rem 0.8rem 0;
     padding: 0.75rem 0.7rem;
-    border: 1px solid #d8e8ee;
+    border: 1px solid #9ed6f0;
     border-left: 3px solid #0794c8;
     border-radius: 5px;
-    background: #f3f9fb;
+    background: #dfeef8;
     transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 #featured .podcast-link:hover,
 #featured .podcast-link:focus-visible {
     border-color: #0794c8;
-    background: #eaf6fa;
+    background: #cfeaf8;
     transform: translateX(2px);
 }
 
