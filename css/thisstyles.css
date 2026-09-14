@@ -93,12 +93,15 @@ body .section-heading {
 }
 
 header.masthead {
-    background: linear-gradient(rgba(19, 30, 61, 0.45), rgba(19, 30, 61, 0.45)), url("../assets/img/home/background.png") center/cover no-repeat;
-    min-height: 720px;
+    background: linear-gradient(rgba(19, 30, 61, 0.45), rgba(19, 30, 61, 0.45)), 
+                url("../assets/img/home/background.png") center center / cover no-repeat;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     padding-top: 8rem;
     padding-bottom: 6rem;
+    overflow: hidden;
 }
 
 header.masthead .container {
@@ -109,6 +112,36 @@ header.masthead .container {
     max-width: 1200px;
     text-align: left;
     color: #f3ebdf;
+    margin-top: 2.5rem;
+}
+
+.masthead-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.75rem 1.4rem;
+    margin: 0 0 2rem;
+    border-radius: 12px;
+    background: rgba(19, 30, 61, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.masthead-city,
+.masthead-country {
+    display: inline-block;
+    font-family: "Gotu", "Segoe UI", sans-serif;
+    font-size: clamp(1.3rem, 2.1vw, 2.2rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.masthead-city {
+    color: #f5d8bf;
+}
+
+.masthead-country {
+    color: #7ec8ff;
 }
 
 .masthead-title {
@@ -239,7 +272,7 @@ section#services {
 }
 
 #testimonials {
-    background: linear-gradient(rgba(13, 31, 56, 0.78), rgba(13, 31, 56, 0.78));
+    background: linear-gradient(rgba(13, 31, 56, 0.82), rgba(13, 31, 56, 0.82));
     color: #f5efe6;
     padding-top: 5rem;
     padding-bottom: 5rem;
@@ -360,7 +393,8 @@ section#services {
 }
 
 section#featured {
-    background: #f5f1eb;
+    background: #CDAD7D;
+    color: #131E3D;
 }
 
 .featured-slider {
