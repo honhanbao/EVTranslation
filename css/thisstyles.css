@@ -679,6 +679,12 @@ section#featured {
         margin-top: 1rem;
     }
 
+    #about .container-about-photo img {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
     header.masthead {
         background-image: linear-gradient(rgba(19, 30, 61, 0.45), rgba(19, 30, 61, 0.45)), url("../assets/img/home/background.png");
         background-position: center center, 72% center;
