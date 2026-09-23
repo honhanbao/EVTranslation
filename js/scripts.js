@@ -59,10 +59,19 @@ window.addEventListener('DOMContentLoaded', event => {
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const testimonialDots = Array.from(document.querySelectorAll('.testimonial-dots .dot'));
-        const visibleCount = 3;
         let startIndex = 0;
 
+        const getVisibleCount = () => {
+            if (window.innerWidth <= 767) return 1;
+            if (window.innerWidth <= 991) return 2;
+            return 3;
+        };
+
         function updateCarousel() {
+            const visibleCount = getVisibleCount();
+            const maxStart = Math.max(testimonials.length - visibleCount, 0);
+            startIndex = Math.min(startIndex, maxStart);
+
             testimonials.forEach((card, index) => {
                 const isVisible = index >= startIndex && index < startIndex + visibleCount;
                 card.classList.toggle('hidden', !isVisible);
@@ -77,6 +86,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
+                const visibleCount = getVisibleCount();
                 startIndex = (startIndex + 1) % Math.max(testimonials.length - visibleCount + 1, 1);
                 updateCarousel();
             });
@@ -84,6 +94,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
+                const visibleCount = getVisibleCount();
                 const maxStart = Math.max(testimonials.length - visibleCount, 0);
                 startIndex = startIndex <= 0 ? maxStart : startIndex - 1;
                 updateCarousel();
@@ -92,11 +103,13 @@ window.addEventListener('DOMContentLoaded', event => {
 
         testimonialDots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
+                const visibleCount = getVisibleCount();
                 startIndex = Math.min(index, Math.max(testimonials.length - visibleCount, 0));
                 updateCarousel();
             });
         });
 
+        window.addEventListener('resize', updateCarousel);
         updateCarousel();
     }
 

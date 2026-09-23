@@ -604,7 +604,93 @@ section#featured {
     object-fit: cover;
 }
 
+@media (max-width: 991.98px) {
+    .masthead {
+        min-height: auto;
+        padding-top: 7rem;
+        padding-bottom: 4.5rem;
+    }
+
+    .masthead-title {
+        font-size: clamp(3rem, 10vw, 7rem);
+    }
+
+    .masthead-line {
+        font-size: clamp(1.6rem, 4vw, 3rem);
+    }
+
+    #about .container-about,
+    #services .services-columns,
+    #contact .contact-columns {
+        flex-direction: column !important;
+    }
+
+    #about .container-about {
+        width: 100% !important;
+    }
+
+    #about .container-about-text,
+    #about .container-about-photo,
+    #services .services-column,
+    #contact .contact-column {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #about .container-about-photo {
+        margin-top: 1.25rem;
+    }
+
+    #services .services-column,
+    #contact .contact-column {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
 @media (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .ev-logo-mark {
+        width: 2.65rem;
+        height: 2.65rem;
+    }
+
+    .ev-logo-text {
+        font-size: 0.68rem;
+    }
+
+    .masthead-content {
+        margin-top: 1rem;
+    }
+
+    .masthead-title {
+        margin-bottom: 1.25rem;
+        font-size: clamp(2.8rem, 15vw, 5rem);
+    }
+
+    .masthead-line {
+        font-size: clamp(1.35rem, 5.2vw, 2.2rem);
+    }
+
+    .masthead-button {
+        margin-top: 1.5rem;
+        padding: 0.9rem 1.8rem;
+        font-size: 1.2rem;
+    }
+
+    .page-section h2.section-heading,
+    .page-section .section-heading.h2 {
+        font-size: clamp(2.4rem, 9vw, 3.4rem);
+        margin-bottom: 1rem;
+    }
+
     #featured .featured-columns {
         flex-direction: column;
     }
@@ -613,12 +699,54 @@ section#featured {
         flex-basis: auto;
     }
 
-    #featured .slider-btn.left {
-        left: -18px;
+    .testimonial-slider {
+        overflow: hidden;
     }
 
-    #featured .slider-btn.right {
-        right: -18px;
+    .carousel-track {
+        gap: 0.75rem;
+    }
+
+    .testimonial-card {
+        flex: 0 0 100% !important;
+        min-height: 240px;
+    }
+
+    .slider-btn.left {
+        left: 0;
+    }
+
+    .slider-btn.right {
+        right: 0;
+    }
+
+    .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-meta {
+        font-size: 0.72rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .masthead {
+        padding-top: 6.5rem;
+    }
+
+    .navbar-toggler {
+        padding: 0.45rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .navbar-nav {
+        gap: 0.15rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
     }
 }
 
