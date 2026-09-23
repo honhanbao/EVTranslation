@@ -619,7 +619,6 @@ section#featured {
         font-size: clamp(1.6rem, 4vw, 3rem);
     }
 
-    #about .container-about,
     #services .services-columns,
     #contact .contact-columns {
         flex-direction: column !important;
@@ -627,27 +626,66 @@ section#featured {
 
     #about .container-about {
         width: 100% !important;
+        flex-direction: column !important;
+        align-items: stretch;
     }
 
     #about .container-about-text,
-    #about .container-about-photo,
+    #about .container-about-photo {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    #about .container-about-text {
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    #about .container-about-photo {
+        margin-top: 1rem;
+    }
+
     #services .services-column,
     #contact .contact-column {
         width: 100% !important;
         max-width: 100% !important;
-    }
-
-    #about .container-about-photo {
-        margin-top: 1.25rem;
-    }
-
-    #services .services-column,
-    #contact .contact-column {
         padding: 1.5rem 1.25rem;
     }
 }
 
 @media (max-width: 767px) {
+    #about .container-about {
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: stretch;
+    }
+
+    #about .container-about-text,
+    #about .container-about-photo {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    #about .container-about-text {
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    #about .container-about-photo {
+        margin-top: 1rem;
+    }
+
+    header.masthead {
+        background-image: linear-gradient(rgba(19, 30, 61, 0.45), rgba(19, 30, 61, 0.45)), url("../assets/img/home/background.png");
+        background-position: center center, 72% center;
+        background-size: cover, cover;
+        background-repeat: no-repeat, no-repeat;
+    }
+
     body {
         overflow-x: hidden;
     }
